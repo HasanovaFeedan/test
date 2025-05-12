@@ -1,0 +1,64 @@
+.grid-line {
+    stroke: rgba(255, 255, 255, 0.8);  
+    stroke-width: 0.2;                  
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawLine 1.2s ease-out forwards;
+    shape-rendering: crispEdges;         /* Netlik sağlar */
+  }
+  
+  
+  /* delaylar */
+  .delay-0 {
+    animation-delay: 0s;
+  }
+  .delay-1 {
+    animation-delay: 1s;
+  }
+  
+  /* Ortadan sag ve sol */
+  .draw-right {
+    animation-name: drawLine;
+  }
+  .draw-left {
+    animation-name: drawLine;
+  }
+  
+  /* oetadan yuxari ve asagi */
+  .draw-up {
+    animation-name: drawLine;
+  }
+  .draw-down {
+    animation-name: drawLine;
+  }
+  
+  @keyframes drawLine {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  .app {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .blue-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #007cf0, #00dfd8);
+    z-index: 1;
+  }
+  
+  .grid-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10; 
+    pointer-events: none;
+  }
+  
